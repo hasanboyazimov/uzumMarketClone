@@ -27,10 +27,6 @@ function App() {
           path: "/contact",
           element: <Contact />,
         },
-        {
-          path: `/${id}`,
-          element: <About />,
-        },
       ],
     },
   ]);
