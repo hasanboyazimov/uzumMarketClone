@@ -1,6 +1,7 @@
 // Navbar.js
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass,faUser, faBagShopping,faHeart } from "@fortawesome/free-solid-svg-icons";
+import Logo from "../images/uzum-market-logo.png"
 
 const Navbar = () => {
   return (
@@ -24,7 +25,7 @@ const Navbar = () => {
       <nav className="flex flex-col md:flex-row justify-between items-center bg-white p-4 ">
         <div className="flex items-center mb-4 md:mb-0">
           <img
-            src="./images/uzum-market-logo.png"
+            src={Logo}
             alt="Uzum Market Logo"
             className="h-10 mr-4"
           />
