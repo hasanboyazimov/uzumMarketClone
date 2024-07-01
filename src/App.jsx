@@ -1,5 +1,9 @@
 import styles from "../src/App.module.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 
 //pages
 import Home from "./pages/Home";
@@ -9,11 +13,19 @@ import Contact from "./pages/Contact";
 import RootLayout from "./layout/RootLayaout";
 import SingleProduct from "./pages/SingleProduct";
 
+//components
+import ProtectedRoutes from "./components/ProtectedRoutes";
+
 function App() {
+  const { user } = use;
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <RootLayout />,
+      element: (
+        <ProtectedRoutes user={user}>
+          <RootLayout />
+        </ProtectedRoutes>
+      ),
       children: [
         {
           index: true,

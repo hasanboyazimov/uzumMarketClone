@@ -6,9 +6,15 @@ function Home() {
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products")
-      .then((data) => data.json())
-      .then((products) => setProducts(products.products));
+    try {
+      fetch("https://dummyjson.com/products")
+        .then((data) => data.json())
+        .then((products) => setProducts(products.products));
+
+      throw new Error("Something went wrong!");
+    } catch (err) {
+      console.log(err.message);
+    }
   }, []);
   return (
     <div className="container max-w-[1240px] mr-auto ml-auto">

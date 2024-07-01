@@ -7,9 +7,7 @@ function Card({ product }) {
   console.log(product);
 
   return (
-    <Link
-      to={"/singleProduct/" + product.id }
-    >
+    <Link to={"/singleProduct/" + product.id} >
       <div className="card relative col-span-12 sm-20:col-span-12 sm-23:col-span-12 sm-37:col-span-12 md-960:col-span-12 lg-64:col-span-3 card-compact bg-base-100 w-[232px] mb-5 shadow-xl">
         <figure>
           <img className="" src={product.thumbnail} alt={product.title} />

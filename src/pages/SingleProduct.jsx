@@ -1,13 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+// import { error } from "console";
 
 function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
-  // useEffect(() => {
-  //   fetch("")
-  // })
+  useEffect(() => {
+    fetch("https://dummyjson.com/product" + id)
+      .then((data) => data.json())
+      .then((product) => setProduct(product))
+      .catch((error) => {
+        console.log(error);
+      }, []);
+  });
 
   return (
     <div className="flex p-4 max-w-[1240px] mx-auto">
